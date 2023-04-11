@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  border-bottom: 1px solid #eaeaea;
+  .headerLeft {
+    display: flex;
+    gap: 15px;
+    p {
+      opacity: .5;
+    }
+  }
+  .headerRight {
+    display: flex;
+    gap: 30px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+}
