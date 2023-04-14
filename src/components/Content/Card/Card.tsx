@@ -8,17 +8,16 @@ import {IItem} from "../../../types/data";
 interface ICard {
     item: IItem
     onAddCart:(item: IItem) => void
+
 }
 export const Card: FC<ICard> = ({item, onAddCart}) => {
     const {name, price, imageUrl} = item
     const [isAdded, setIsAdded] = useState<boolean>(false)
 
     const onClickAdd = () => {
-        onAddCart( item)
+        onAddCart(item)
         setIsAdded(!isAdded)
     }
-
-    console.log()
 
     return (
         <div className={styles.card}>
@@ -33,7 +32,6 @@ export const Card: FC<ICard> = ({item, onAddCart}) => {
                     <b>{price} руб.</b>
                 </div>
                 <img onClick={onClickAdd} className={styles.plus} src={!isAdded ? plus : check} alt="Лайкнули"/>
-
             </div>
         </div>
     );
