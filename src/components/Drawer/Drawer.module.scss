@@ -1,3 +1,33 @@
+button,
+.btnDrawerEmpty {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  padding: 18px 0;
+
+  color: #FFFFFF;
+  background: #9DD558;
+  border-radius: 18px;
+  &:hover {
+    background-color: lighten(#9DD558, 5%);
+    img {
+      transform: translateX(5px);
+    }
+  }
+  &:active {
+    background-color: darken(#9DD558, 5%);
+  }
+  img {
+    position: absolute;
+    right: 40px;
+    top: 22px;
+    transition: transform .15s ease-in-out;
+  }
+}
+
 .overlay {
   position: absolute;
   left: 0;
@@ -16,6 +46,34 @@
     background: #FFFFFF;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    .drawerEmpty {
+      margin-top: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      h2 {
+        margin-top: 20px;
+      }
+      p {
+        margin: 10px 0 40px;
+        text-align: center;
+        opacity: .5;
+      }
+      .btnDrawerEmpty {
+        img {
+          position: absolute;
+          left: 40px;
+          top: 22px;
+          transition: transform .15s ease-in-out;
+        }
+        &:hover {
+          img {
+            transform: translateX(-5px);
+          }
+        }
+      }
+    }
     .topDrawer {
       display: flex;
       align-items: center;
@@ -28,7 +86,13 @@
 
     .items {
       flex: 1;
-      overflow-y: scroll;
+      overflow-y: auto;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+
     }
     .total {
       li {
@@ -42,34 +106,9 @@
         flex: 1;
         border-bottom: 1px dashed #dfdfdf
       }
-      button {
-        position: relative;
-        cursor: pointer;
-        width: 100%;
-        font-weight: 600;
-        font-size: 16px;
-        text-align: center;
-        padding: 18px 0;
 
-        color: #FFFFFF;
-        background: #9DD558;
-        border-radius: 18px;
-        &:hover {
-          background-color: lighten(#9DD558, 5%);
-          img {
-            transform: translateX(5px);
-          }
-        }
-        &:active {
-          background-color: darken(#9DD558, 5%);
-        }
-        img {
-          position: absolute;
-          right: 40px;
-          top: 22px;
-          transition: transform .15s ease-in-out;
-        }
-      }
     }
   }
 }
+
+
